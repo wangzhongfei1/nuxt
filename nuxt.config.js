@@ -42,12 +42,20 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true
+  },
+  proxy: {
+    '/ajax': {
+      target: 'https://m.maoyan.com',
+      changeOrigin: true
+    }
   },
   /*
   ** Build configuration
@@ -58,6 +66,15 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+    }
+  },
+  router: {
+    middleware: 'redirect',
+    extendRoutes(routes) {
+      routes.push({
+        path: '/',
+        redirect: '/film/nowplaying'
+      })
     }
   }
 }

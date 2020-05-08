@@ -1,12 +1,5 @@
 <template>
   <div>
-    <nav>
-      <ul>
-        <nuxt-link to="/film" tag="li" activeClass="myActive">电影</nuxt-link>
-        <nuxt-link to="/cinema" tag="li" activeClass="myActive">影院</nuxt-link>
-        <nuxt-link to="/center" tag="li" activeClass="myActive">我的</nuxt-link>
-      </ul>
-    </nav>
     <!-- 路由容器 占位符 -->
     <nuxt />
   </div>
@@ -61,25 +54,6 @@ html {
   background-color: #35495e;
 }
 .myActive {
-  color: #e54847;
+  color: red;
 }
-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: white;
-}
-nav ul {
-    display: flex;
-  }
-
-nav ul li {
-    flex: 1;
-    line-height: 50px;
-    text-align: center;
-    color: #333;
-    list-style: none;
-  }
 </style>
